@@ -4,7 +4,7 @@
   --background-col: linear-gradient(180deg, rgb(132, 154, 201) 0%, rgba(31, 30, 96, 1) 44%, rgba(8, 8, 32, 1) 87%);
   --font-col: rgb(252, 244, 223);
   --copy-col: rgba(252, 244, 223, 0.418);
-  --contact-col: rgb(252, 244, 223);
+  --contact-col: rgb(224, 221, 211);
   --tekst-col: rgb(252, 244, 223);
 }
 
@@ -13,7 +13,7 @@
   --font-col: rgb(55, 50, 45);
   --copy-col: rgba(252, 244, 223, 0.418);
   --contact-col: rgb(240, 233, 215);
-  --tekst-col: rgb(43, 39, 35);
+  --tekst-col: rgb(234, 226, 207);
 }
 
 body {
