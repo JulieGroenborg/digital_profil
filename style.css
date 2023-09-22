@@ -76,7 +76,7 @@ p {
 /* Style the accordion content (hidden by default) */
 .accordion-content {
   display: none;
-  padding: 10px;
+  padding-top: 10px;
 }
 
 .plus {
@@ -446,10 +446,11 @@ input:checked + .slider:before {
 
 #kontakt {
   margin-top: 8%;
-  margin-bottom: 3%;
-  margin-left: 8%;
-  margin-right: 8%;
+  margin-bottom: 0%;
+  margin-left: 0%;
+  margin-right: 0%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   font-size: 110%;
+  align-items: end;
 }
