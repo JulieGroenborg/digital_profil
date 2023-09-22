@@ -50,17 +50,33 @@ function andenAnimation() {
 
 document.querySelector("body").setAttribute("data-theme", "blue");
 document.querySelector("input").setAttribute("checked", "true");
-
 document.querySelector("input").addEventListener("change", skiftFarve);
 
 function skiftFarve() {
   if (document.querySelector("input").checked) {
     console.log("du er checked");
     document.querySelector("body").setAttribute("data-theme", "blue");
-    // localStorage.setItem("theme", "hawaii");
+    document.querySelector("#kanin_line").classList.add("hide");
+    document.querySelector("#kanin").classList.remove("hide");
+    document.querySelectorAll(".vector_blue").forEach((element) => {
+      element.classList.remove("hide");
+    });
+
+    document.querySelectorAll(".vector_brown").forEach((element) => {
+      element.classList.add("hide");
+    });
   } else if (!document.querySelector("input").checked) {
     console.log("du er ikke checked");
     document.querySelector("body").setAttribute("data-theme", "neutral");
-    // localStorage.setItem("theme", "dark");
+    document.querySelector("#kanin").classList.add("hide");
+    document.querySelector("#kanin_line").classList.remove("hide");
+
+    document.querySelectorAll(".vector_blue").forEach((element) => {
+      element.classList.add("hide");
+    });
+
+    document.querySelectorAll(".vector_brown").forEach((element) => {
+      element.classList.remove("hide");
+    });
   }
 }

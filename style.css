@@ -36,7 +36,8 @@ body {
   height: 215px;
 }
 
-#kanin {
+#kanin,
+#kanin_line {
   bottom: 0;
   left: 1%;
   position: fixed;
@@ -199,7 +200,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #ca693d;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -308,22 +309,26 @@ input:checked + .slider:before {
   position: absolute;
 }
 
-#goal :nth-child(1) {
+#goal :nth-child(1),
+#goal :nth-child(5) {
   top: 0;
   left: 0;
 }
 
-#goal :nth-child(2) {
+#goal :nth-child(2),
+#goal :nth-child(6) {
   top: 0;
   right: 0;
 }
 
-#goal :nth-child(3) {
+#goal :nth-child(3),
+#goal :nth-child(7) {
   bottom: 0;
   right: 0;
 }
 
-#goal :nth-child(4) {
+#goal :nth-child(4),
+#goal :nth-child(8) {
   bottom: 0;
   left: 0;
 }
@@ -371,22 +376,26 @@ input:checked + .slider:before {
   position: absolute;
 }
 
-#Ican :nth-child(1) {
+#Ican :nth-child(1),
+#Ican :nth-child(5) {
   top: 0;
   left: 0;
 }
 
-#Ican :nth-child(2) {
+#Ican :nth-child(2),
+#Ican :nth-child(6) {
   top: 0;
   right: 0;
 }
 
-#Ican :nth-child(3) {
+#Ican :nth-child(3),
+#Ican :nth-child(7) {
   bottom: 0;
   right: 0;
 }
 
-#Ican :nth-child(4) {
+#Ican :nth-child(4),
+#Ican :nth-child(8) {
   bottom: 0;
   left: 0;
 }
