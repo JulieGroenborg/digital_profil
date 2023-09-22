@@ -1,0 +1,446 @@
+@import url("https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;600&display=swap");
+
+[data-theme="blue"] {
+  --background-col: linear-gradient(180deg, rgb(132, 154, 201) 0%, rgba(31, 30, 96, 1) 44%, rgba(8, 8, 32, 1) 87%);
+  --font-col: rgb(252, 244, 223);
+  --copy-col: rgba(252, 244, 223, 0.418);
+}
+
+[data-theme="neutral"] {
+  --background-col: linear-gradient(180deg, rgb(236, 227, 221) 0%, rgb(206, 195, 184) 31%, rgb(104, 98, 95) 100%);
+  --font-col: rgb(55, 50, 45);
+  --copy-col: rgba(252, 244, 223, 0.418);
+}
+
+body {
+  background: var(--background-col);
+  padding: 0 14% 0 14%;
+  position: relative;
+  font-family: "martel sans";
+  font-weight: 300;
+  color: var(--font-col);
+}
+
+#git,
+#in,
+#instagram {
+  width: 55px;
+}
+
+#ikoner {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  justify-content: space-between;
+  right: 2%;
+  height: 215px;
+}
+
+#kanin {
+  bottom: 0;
+  left: 1%;
+  position: fixed;
+  z-index: 5;
+  width: 18%;
+}
+p {
+  margin: 0;
+}
+.hidden {
+  opacity: 0;
+  transition: all 2s;
+  filter: blur(5px);
+  transform: translateX(-100%);
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+/*---------------------------------------------*/
+
+.hide {
+  display: none;
+}
+
+/* Style the accordion headers */
+.accordion-header {
+  cursor: pointer;
+  min-width: 20px;
+  min-height: 10px;
+}
+
+/* Style the accordion content (hidden by default) */
+.accordion-content {
+  display: none;
+  padding: 10px;
+}
+
+.plus {
+  width: 22px;
+  height: 4px;
+  background-color: rgb(234, 208, 155);
+  position: relative;
+  margin-top: 3%;
+  border-radius: 5px;
+}
+
+.plus::before {
+  border-radius: 5px;
+  content: "";
+  width: 4px;
+  height: 22px;
+  background-color: rgb(234, 208, 155);
+  position: absolute;
+  top: -9px;
+  left: 9px;
+}
+
+.minus {
+  margin-top: 3%;
+  width: 22px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: rgb(213, 205, 162);
+}
+
+/* Style the plus and minus symbols */
+/* .plus-minus-toggle .symbol {
+  transition: transform 0.3s ease-in-out;
+}
+.plus-minus-toggle .plus {
+  transform: rotate(-90deg);
+} */
+
+.accordion-content p {
+  margin: 0;
+}
+
+.smooth-animation {
+  animation-name: smoothSlide;
+  animation-duration: 0.5s; /* Adjust the duration as needed */
+  animation-timing-function: ease-in-out; /* Choose the timing function you prefer */
+  animation-fill-mode: both; /* Keeps the element in its final state after animation */
+}
+
+@keyframes smoothSlide {
+  0% {
+    transform: translateY(-35%);
+    filter: opacity(0);
+    filter: blur(0);
+  }
+  100% {
+    transform: translateY(0%); /* The final state you want to transition to */
+    filter: opacity(1);
+    filter: blur(1);
+  }
+}
+
+.pluszoom-animation {
+  animation-name: plusZoom;
+  animation-duration: 2.4s; /* Adjust the duration as needed */
+  animation-timing-function: ease; /* Choose the timing function you prefer */
+  animation-iteration-count: infinite;
+}
+
+@keyframes plusZoom {
+  0% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+    transform-origin: center center;
+  }
+
+  10% {
+    animation-timing-function: ease-in;
+    transform: scale(0.84);
+  }
+
+  17% {
+    animation-timing-function: ease-out;
+    transform: scale(0.92);
+  }
+
+  33% {
+    animation-timing-function: ease-in;
+    transform: scale(0.81);
+  }
+
+  45% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+}
+
+/*-----------------toggle-------------------------*/
+/* The switch - the box around the slider */
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  top: 1.3%;
+  left: 14%;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(76, 75, 170);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(62, 61, 142);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*------------------------------------------*/
+
+#top {
+  position: relative;
+}
+
+#praktiktitel {
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2% 2% 0 2%;
+  margin-top: 2%;
+  filter: opacity(0.8);
+}
+
+#julie {
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  filter: opacity(0.6);
+}
+
+.span {
+  font-weight: 600;
+  padding-bottom: 2%;
+  margin: 0;
+  font-weight: 600;
+}
+
+#whatIwant {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-top: 8%;
+}
+
+#whatIwant > * {
+  padding: 0%;
+}
+
+#whatIwant > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* padding-left: 10%;*/
+  padding-right: 10%;
+  line-height: 165%;
+  font-size: 120%;
+}
+
+#whatIwant > img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+#whatIwant p {
+  margin: 0;
+}
+
+#goal {
+  margin-top: 15%;
+  margin-bottom: 5%;
+  position: relative;
+}
+
+#goal img {
+  position: absolute;
+}
+
+#goal :nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+#goal :nth-child(2) {
+  top: 0;
+  right: 0;
+}
+
+#goal :nth-child(3) {
+  bottom: 0;
+  right: 0;
+}
+
+#goal :nth-child(4) {
+  bottom: 0;
+  left: 0;
+}
+
+#goal > div {
+  padding: 6% 18% 5% 18%;
+  font-size: 110%;
+  line-height: 165%;
+  position: relative;
+}
+
+#whoamI {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 15%;
+}
+
+#whoamI div {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  padding: 0 6% 0 9%;
+  font-size: 120%;
+  line-height: 165%;
+}
+
+#whoamI > img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+#Ican {
+  border-radius: 20px;
+  padding: 6% 18% 5% 18%;
+  font-size: 110%;
+  line-height: 165%;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  margin-top: 15%;
+  position: relative;
+}
+
+#Ican img {
+  position: absolute;
+}
+
+#Ican :nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+#Ican :nth-child(2) {
+  top: 0;
+  right: 0;
+}
+
+#Ican :nth-child(3) {
+  bottom: 0;
+  right: 0;
+}
+
+#Ican :nth-child(4) {
+  bottom: 0;
+  left: 0;
+}
+
+#finish {
+  margin-top: 2%;
+  margin-bottom: 5%;
+  padding: 0 30% 0 30%;
+  position: relative;
+}
+
+.card {
+  /* display: grid;
+  place-items: center; */
+  margin: 2%;
+  cursor: pointer;
+}
+
+#cards a {
+  width: 250px;
+}
+
+.card a img {
+  width: 100%;
+}
+
+.card > p {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+#projekter {
+  margin-bottom: 8%;
+  margin-top: 15%;
+}
+
+#cards {
+  display: flex;
+  place-content: center;
+  /* width: 20%; */
+}
+
+#copy {
+  color: var(--copy-col);
+  display: grid;
+  place-content: center;
+  font-size: 90%;
+}
+
+#kontakt {
+  margin-top: 8%;
+  margin-bottom: 3%;
+  margin-left: 8%;
+  margin-right: 8%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 110%;
+}
