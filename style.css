@@ -422,7 +422,7 @@ input:checked + .slider:before {
   cursor: pointer;
   border: solid black 1px;
   border-radius: 4px;
-  box-shadow: 0 4px 15px 0 rgba(255, 255, 255, 0.2), 0 6px 25px 0 rgba(255, 255, 255, 0.19);
+  box-shadow: 0 4px 15px 4px rgba(123, 123, 123, 0.2), 0 6px 25px 4px rgba(125, 125, 125, 0.19);
 }
 
 #projekter .span {
