@@ -720,17 +720,33 @@ a:active {
     padding-left: 10%;
     padding-right: 10%;
   }
-  .switch {
-    width: 50px;
-    height: 24px;
-    top: 1%;
-    left: 10%;
-  }
 
-  .slider:before {
-    height: 17px;
-    width: 17px;
-    left: 4px;
+  input:checked + .slider::before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(17px);
+  }
+  .switch {
+    width: 38px;
+    height: 18px;
+    top: 1%;
+    left: 15%;
+  }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 5px;
+    bottom: 0;
+    background-color: #ca693d;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .slider::before {
+    height: 11px;
+    width: 11px;
+    left: 2px;
     bottom: 3px;
   }
 
@@ -807,6 +823,20 @@ a:active {
     height: 2px;
     border-radius: 5px;
     background-color: rgb(213, 205, 162);
+  }
+}
+
+@media (max-width: 640px) {
+  #praktiktitel {
+    width: 65%;
+    padding-top: 4%;
+  }
+}
+
+@media (max-width: 475px) {
+  #praktiktitel {
+    width: 65%;
+    padding-top: 5%;
   }
 }
 
