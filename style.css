@@ -94,6 +94,7 @@ p {
   position: relative;
   margin-top: 3%;
   border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .plus::before {
@@ -105,6 +106,7 @@ p {
   position: absolute;
   top: -9px;
   left: 9px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .minus {
@@ -129,8 +131,8 @@ p {
 
 .smooth-animation {
   animation-name: smoothSlide;
-  animation-duration: 0.5s; /* Adjust the duration as needed */
-  animation-timing-function: ease-in-out; /* Choose the timing function you prefer */
+  animation-duration: 0.3s; /* Adjust the duration as needed */
+  animation-timing-function: ease-in; /* Choose the timing function you prefer */
   animation-fill-mode: both; /* Keeps the element in its final state after animation */
 }
 
@@ -423,6 +425,12 @@ input:checked + .slider:before {
   border: solid black 1px;
   border-radius: 4px;
   box-shadow: 0 4px 15px 4px rgba(123, 123, 123, 0.2), 0 6px 25px 4px rgba(125, 125, 125, 0.19);
+  scale: 1;
+  transition: scale 0.2s ease-in-out;
+}
+
+.card:hover {
+  scale: 1.1;
 }
 
 #projekter .span {
