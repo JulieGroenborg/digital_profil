@@ -20,7 +20,7 @@ body {
   background: var(--background-col);
   padding: 0 14% 0 14%;
   position: relative;
-  font-family: "martel sans";
+  font-family: "Roboto";
   font-weight: 300;
   color: var(--font-col);
 }
@@ -274,9 +274,10 @@ input:checked + .slider:before {
 }
 
 .span {
-  font-weight: 600;
+  font-weight: 400;
   padding-bottom: 2%;
   margin: 0;
+  font-size: 120%;
 }
 
 #whatIwant {
