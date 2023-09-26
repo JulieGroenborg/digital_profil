@@ -9,7 +9,7 @@
 }
 
 [data-theme="neutral"] {
-  --background-col: linear-gradient(180deg, rgb(236, 227, 221) 0%, rgb(206, 195, 184) 31%, rgb(104, 98, 95) 100%);
+  --background-col: linear-gradient(180deg, rgb(244, 239, 235) 0%, rgb(218, 209, 200) 31%, rgb(145, 134, 127) 100%);
   --font-col: rgb(55, 50, 45);
   --copy-col: rgba(252, 244, 223, 0.418);
   --contact-col: rgb(240, 233, 215);
