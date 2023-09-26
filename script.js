@@ -78,5 +78,6 @@ function skiftFarve() {
     document.querySelectorAll(".vector_brown").forEach((element) => {
       element.classList.remove("hide");
     });
+    document.querySelector("#whatIwant img").style.border = "black solid 1.5px";
   }
 }

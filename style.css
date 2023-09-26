@@ -9,7 +9,7 @@
 }
 
 [data-theme="neutral"] {
-  --background-col: linear-gradient(180deg, rgb(236, 227, 221) 0%, rgb(206, 195, 184) 31%, rgb(104, 98, 95) 100%);
+  --background-col: linear-gradient(180deg, rgb(245, 240, 240) 0%, rgb(239, 232, 226) 31%, rgb(142, 133, 129) 100%);
   --font-col: rgb(55, 50, 45);
   --copy-col: rgba(252, 244, 223, 0.418);
   --contact-col: rgb(240, 233, 215);
@@ -21,7 +21,7 @@ body {
   padding: 0 14% 0 14%;
   position: relative;
   font-family: "Roboto";
-  font-weight: 300;
+  font-weight: 400;
   color: var(--font-col);
 }
 
@@ -275,9 +275,9 @@ input:checked + .slider:before {
 
 .span {
   font-weight: 400;
-  padding-bottom: 2%;
+  padding-bottom: 3%;
   margin: 0;
-  font-size: 120%;
+  font-size: 140%;
 }
 
 #whatIwant {
