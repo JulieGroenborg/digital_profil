@@ -262,7 +262,8 @@ input:checked + .slider:before {
   margin-right: auto;
   padding: 2% 2% 0 2%;
   margin-top: 2%;
-  filter: opacity(0.8);
+
+  filter: saturate(1.5) opacity(1);
 }
 
 #julie {
@@ -270,7 +271,7 @@ input:checked + .slider:before {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
-  filter: opacity(0.6);
+  filter: saturate(2) opacity(0.9);
 }
 
 .span {
@@ -303,6 +304,7 @@ input:checked + .slider:before {
 #whatIwant > img {
   max-width: 100%;
   border-radius: 4px;
+  border: black 1.5px solid;
 }
 
 #whatIwant p {
