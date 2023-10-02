@@ -8,9 +8,9 @@
   --tekst-col: rgb(252, 244, 223);
 }
 
-[data-theme="neutral"] {
-  --background-col: linear-gradient(180deg, rgb(236, 230, 226) 0%, rgb(218, 209, 200) 31%, rgb(145, 134, 127) 100%);
-  --font-col: rgb(55, 50, 45);
+[data-theme="dark"] {
+  --background-col: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(32, 32, 32) 31%, rgb(54, 54, 54) 100%);
+  --font-col: rgb(252, 244, 223);
   --copy-col: rgba(252, 244, 223, 0.418);
   --contact-col: rgb(240, 233, 215);
   --tekst-col: rgb(234, 226, 207);
@@ -46,9 +46,9 @@ body {
 
 #kanin,
 #kanin_line {
-  bottom: 0;
+  bottom: -8px;
   left: 1%;
-  position: fixed;
+  position: absolute;
   z-index: 5;
   width: 18%;
 }
@@ -210,7 +210,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ca693d;
+  background-color: #cd6738;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }

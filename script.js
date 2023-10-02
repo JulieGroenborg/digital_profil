@@ -67,7 +67,7 @@ function skiftFarve() {
     });
   } else if (!document.querySelector("input").checked) {
     console.log("du er ikke checked");
-    document.querySelector("body").setAttribute("data-theme", "neutral");
+    document.querySelector("body").setAttribute("data-theme", "dark");
     document.querySelector("#kanin").classList.add("hide");
     document.querySelector("#kanin_line").classList.remove("hide");
 
