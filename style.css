@@ -9,7 +9,7 @@
 }
 
 [data-theme="dark"] {
-  --background-col: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(32, 32, 32) 31%, rgb(54, 54, 54) 100%);
+  --background-col: linear-gradient(180deg, rgb(7, 7, 7) 0%, rgb(30, 30, 30) 31%, rgb(45, 45, 45) 100%);
   --font-col: rgb(252, 244, 223);
   --copy-col: rgba(252, 244, 223, 0.418);
   --contact-col: rgb(240, 233, 215);
@@ -267,6 +267,8 @@ input:checked + .slider:before {
 }
 
 #julie {
+  position: sticky;
+  inset: 0;
   display: grid;
   margin-left: auto;
   margin-right: auto;
@@ -317,14 +319,21 @@ input:checked + .slider:before {
   position: relative;
 }
 
-#goal img {
+#goal svg {
   position: absolute;
+  max-width: 100%;
+  top: -155px;
+  left: 0px;
 }
 
-#goal :nth-child(1),
-#goal :nth-child(5) {
-  top: 0;
-  left: 0;
+#goal_content {
+  position: relative;
+}
+
+.line {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 400;
+  stroke: rgba(200, 136, 25, 0.852);
 }
 
 #goal :nth-child(2),
@@ -367,10 +376,26 @@ input:checked + .slider:before {
   line-height: 165%;
 }
 
-#whoamI > img {
-  max-width: 100%;
-  border-radius: 4px;
+#whoamI_fig {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  width: 500px;
+  height: 600px;
+  clip-path: polygon(1rem 15%, 100% 0, 100% calc(100% - 3rem), 0 100%);
+  margin: 0 auto; /* Center the polygon shape horizontally on the page */
 }
+
+#whoamI img {
+  max-width: 85%; /* Ensure the image does not exceed the size of its container */
+  height: auto; /* Maintain the image's aspect ratio */
+}
+
+/* figure {
+  width: 500px;
+  height: 500px;
+  clip-path: polygon(1rem 1rem, 100% 0, 100% calc(100% - 2rem), 0 100%);
+} */
 
 #Ican {
   border-radius: 20px;

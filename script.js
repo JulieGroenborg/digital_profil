@@ -80,3 +80,70 @@ function skiftFarve() {
     });
   }
 }
+
+/*--------------animationsleg for "Julie Grønborg Eriksen"------------------*/
+gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
+  gsap.to("#julie", {
+    x: 710,
+    y: 440,
+    scale: 0.7,
+    rotation: -90,
+    position: "sticky",
+    scrollTrigger: {
+      trigger: "#julie",
+      scrub: true,
+      start: "top 5%",
+      end: "+=300px",
+      // markers: true,
+      toggleActions: "play none none reverse",
+    },
+  });
+});
+
+/*---------------animationsleg for close-up foto---------------*/
+
+// Wrap your code in a function to ensure it runs after the DOM is loaded.
+document.addEventListener("DOMContentLoaded", function () {
+  // Select the image element
+  const img = document.querySelector("#whoamI_fig > img");
+
+  // Define the animation using GSAP
+  const imgAnimation = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#whoamI_fig", // Trigger element
+      start: "top 20%", // Start animation when the trigger element is at the middle of the viewport
+      end: "bottom 30%", // End animation when the trigger element is at the middle of the viewport
+      scrub: true, // Smoothly scrub through the animation
+    },
+  });
+
+  // Add animation properties (in this case, move the image on the Y-axis)
+  imgAnimation.to(img, {
+    y: 150, // Adjust this value to control the amount of movement
+  });
+});
+
+/*-----------------animationsleg på linje-X---------------------*/
+
+// Initialize GSAP and ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// Create a timeline for drawing the SVG path
+const timeline = gsap.timeline({
+  defaults: { duration: 1 },
+  paused: true, // Pause the animation by default
+});
+
+// Define the animation steps
+timeline.to(".line", { strokeDashoffset: 0 }, "one"); // Animate stroke-dashoffset to reveal the path
+// .addLabel("two", "+=2") // Pause for 2 seconds
+// .to(".line", { strokeDashoffset: 400 }, "two"); // Reset stroke-dashoffset
+
+// Create a ScrollTrigger for the animation
+ScrollTrigger.create({
+  trigger: ".line", // Trigger on the element with class ".line"
+  start: "top center", // Start when the trigger element's center reaches the top of the viewport
+  end: "bottom center", // End when the trigger element's center reaches the bottom of the viewport
+  scrub: 0.2, // Scrub the animation with a 0.2 second smoothing
+  animation: timeline, // Use the created timeline for the animation
+});
