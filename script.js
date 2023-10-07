@@ -147,7 +147,7 @@ ScrollTrigger.create({
   trigger: ".line", // Trigger on the element with class ".line"
   start: "top center", // Start when the trigger element's center reaches the top of the viewport
   end: "center center", // End when the trigger element's center reaches the bottom of the viewport
-  markers: true,
+  // markers: true,
   onUpdate: ({ trigger, progress }) => {
     trigger.style.setProperty("--p", 1 - progress.toFixed(5));
   },
