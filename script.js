@@ -82,12 +82,14 @@ function skiftFarve() {
 }
 
 /*--------------animationsleg for "Julie Grønborg Eriksen"------------------*/
+
 gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
   gsap.to("#julie", {
-    x: 710,
-    y: 440,
-    scale: 0.7,
-    rotation: -90,
+    x: "0%",
+    y: 130,
+    scale: 2,
+    opacity: 0.05,
+    // rotation: -90,
     position: "sticky",
     scrollTrigger: {
       trigger: "#julie",
