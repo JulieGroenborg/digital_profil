@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;600&display=swap");
 
 [data-theme="blue"] {
-  --background-col: linear-gradient(180deg, rgb(132, 154, 201) 0%, rgba(31, 30, 96, 1) 44%, rgba(8, 8, 32, 1) 87%);
+  --background-col: #1e1d5e;
   --font-col: rgb(252, 244, 223);
   --copy-col: rgba(252, 244, 223, 0.418);
   --contact-col: rgb(224, 221, 211);
@@ -9,7 +9,7 @@
 }
 
 [data-theme="dark"] {
-  --background-col: linear-gradient(180deg, rgb(7, 7, 7) 0%, rgb(30, 30, 30) 31%, rgb(45, 45, 45) 100%);
+  --background-col: #151515;
   --font-col: rgb(252, 244, 223);
   --copy-col: rgba(252, 244, 223, 0.418);
   --contact-col: rgb(240, 233, 215);
@@ -228,7 +228,7 @@ p {
 }
 
 input:checked + .slider {
-  background-color: rgb(76, 75, 170);
+  background-color: rgb(69, 69, 230);
 }
 
 input:focus + .slider {
@@ -324,34 +324,31 @@ input:checked + .slider:before {
   max-width: 100%;
   top: -155px;
   left: 0px;
+  overflow: visible;
+}
+
+#goal_svg {
+  z-index: 1;
 }
 
 #goal_content {
   position: relative;
+  z-index: 2;
 }
 
 .line {
-  stroke-dasharray: 70;
-  stroke-dashoffset: 400;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: var(--p, 1);
+  /* transition: 0.8s; */
+  transition-timing-function: linear;
+  /* animation: dash 5s linear forwards; */
   stroke: rgba(200, 136, 25, 0.852);
 }
 
-#goal :nth-child(2),
-#goal :nth-child(6) {
-  top: 0;
-  right: 0;
-}
-
-#goal :nth-child(3),
-#goal :nth-child(7) {
-  bottom: 0;
-  right: 0;
-}
-
-#goal :nth-child(4),
-#goal :nth-child(8) {
-  bottom: 0;
-  left: 0;
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 #goal > div {
@@ -364,7 +361,7 @@ input:checked + .slider:before {
 #whoamI {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin-top: 15%;
+  margin-top: 5%;
 }
 
 #whoamI div {
@@ -399,14 +396,38 @@ input:checked + .slider:before {
 
 #Ican {
   border-radius: 20px;
-  padding: 6% 18% 5% 18%;
+  padding: 6% 10% 5% 10%;
   font-size: 110%;
   line-height: 165%;
   display: flex;
   flex-direction: column;
   place-content: center;
-  margin-top: 15%;
   position: relative;
+}
+
+#Ican {
+  --circleX: calc(100% * var(--x));
+  --circleY: calc(100% * var(--y));
+  background: radial-gradient(ellipse closest-corner at var(--circleX, 50%) var(--circleY, 50%), #ffb70095 5%, rgba(29, 28, 91, 0) 25%);
+}
+#Ican::before {
+  --cursorX: calc(40vw * var(--x));
+  --cursorY: calc(40vh * var(--y));
+  content: "";
+  position: fixed;
+  background: rgba(31, 30, 96, 1);
+  display: block;
+  translate: var(--cursorX, 0) var(--cursorY, 0);
+  transform: translate(-50%, -50%);
+  mix-blend-mode: luminosity;
+}
+
+#Ican {
+  /* min-height: 70vh; */
+  font-family: system-ui, sans-serif;
+  display: grid;
+  place-content: center;
+  margin-top: 18%;
 }
 
 #Ican img {

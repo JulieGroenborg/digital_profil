@@ -48,8 +48,8 @@ function andenAnimation() {
 
 //---------------------------------
 
-document.querySelector("body").setAttribute("data-theme", "blue");
-document.querySelector("input").setAttribute("checked", "true");
+document.querySelector("body").setAttribute("data-theme", "dark");
+// document.querySelector("input").setAttribute("checked", "true");
 document.querySelector("input").addEventListener("change", skiftFarve);
 
 function skiftFarve() {
@@ -123,7 +123,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-/*-----------------animationsleg på linje-X---------------------*/
+/*-----------------animationsleg på mål med praktik-line-X---------------------*/
+
+// var path = document.querySelector(".line");
+// var length = path.getTotalLength();
 
 // Initialize GSAP and ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -131,19 +134,32 @@ gsap.registerPlugin(ScrollTrigger);
 // Create a timeline for drawing the SVG path
 const timeline = gsap.timeline({
   defaults: { duration: 1 },
-  paused: true, // Pause the animation by default
+  paused: true,
 });
 
 // Define the animation steps
-timeline.to(".line", { strokeDashoffset: 0 }, "one"); // Animate stroke-dashoffset to reveal the path
-// .addLabel("two", "+=2") // Pause for 2 seconds
-// .to(".line", { strokeDashoffset: 400 }, "two"); // Reset stroke-dashoffset
+// timeline.to(".line", { strokeDashoffset: 0 }, "one"); // Animate stroke-dashoffset to reveal the path
 
 // Create a ScrollTrigger for the animation
 ScrollTrigger.create({
   trigger: ".line", // Trigger on the element with class ".line"
   start: "top center", // Start when the trigger element's center reaches the top of the viewport
-  end: "bottom center", // End when the trigger element's center reaches the bottom of the viewport
-  scrub: 0.2, // Scrub the animation with a 0.2 second smoothing
-  animation: timeline, // Use the created timeline for the animation
+  end: "center center", // End when the trigger element's center reaches the bottom of the viewport
+  markers: true,
+  onUpdate: ({ trigger, progress }) => {
+    trigger.style.setProperty("--p", 1 - progress.toFixed(5));
+  },
+  scrub: 2, // Scrub the animation with a 0.2 second smoothing
+  // animation: timeline, // Use the created timeline for the animation
 });
+
+/*-----------------------cursor-----------------*/
+// const root = document.querySelector("#Ican");
+
+function updateCursor(e) {
+  x = e.clientX / window.innerWidth;
+  y = e.clientY / window.innerHeight;
+  document.documentElement.style.setProperty("--x", x.toFixed(5));
+  document.documentElement.style.setProperty("--y", y.toFixed(5));
+}
+document.body.addEventListener("pointermove", updateCursor);
