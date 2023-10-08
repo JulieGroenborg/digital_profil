@@ -1,14 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;600&display=swap");
 
 [data-theme="blue"] {
-  --background-col: #1e1d5e;
-  --font-col: rgb(252, 244, 223);
+  --cursor-col: #ff8615ad;
+  --title-col: #ff8615;
+  --name-col: #ff8615;
+  --line-col: #ff8615dd;
+  --grafik-col: #ff8615df;
+  --background-col: #7d6daa;
+  --font-col: rgb(255, 250, 236);
   --copy-col: rgba(252, 244, 223, 0.418);
   --contact-col: rgb(224, 221, 211);
   --tekst-col: rgb(252, 244, 223);
 }
 
 [data-theme="dark"] {
+  --cursor-col: #ffb70095;
+  --title-col: #feb833;
+  --name-col: #feb833;
+  --line-col: rgba(200, 136, 25, 0.852);
+  --grafik-col: #e3a40c;
   --background-col: #151515;
   --font-col: rgb(252, 244, 223);
   --copy-col: rgba(252, 244, 223, 0.418);
@@ -228,7 +238,7 @@ p {
 }
 
 input:checked + .slider {
-  background-color: rgb(69, 69, 230);
+  background-color: #64299f;
 }
 
 input:focus + .slider {
@@ -342,7 +352,7 @@ input:checked + .slider:before {
   /* transition: 0.8s; */
   transition-timing-function: linear;
   /* animation: dash 5s linear forwards; */
-  stroke: rgba(200, 136, 25, 0.852);
+  stroke: var(--line-col);
 }
 
 @keyframes dash {
@@ -408,7 +418,7 @@ input:checked + .slider:before {
 #Ican {
   --circleX: calc(100% * var(--x));
   --circleY: calc(100% * var(--y));
-  background: radial-gradient(ellipse closest-corner at var(--circleX, 50%) var(--circleY, 50%), #ffb70095 5%, rgba(29, 28, 91, 0) 25%);
+  background: radial-gradient(ellipse closest-corner at var(--circleX, 50%) var(--circleY, 50%), var(--cursor-col) 5%, rgba(29, 28, 91, 0) 25%);
 }
 #Ican::before {
   --cursorX: calc(40vw * var(--x));
