@@ -89,6 +89,8 @@ p {
   cursor: pointer;
   min-width: 20px;
   min-height: 10px;
+  z-index: 5;
+  position: relative;
 }
 
 /* Style the accordion content (hidden by default) */
@@ -126,14 +128,6 @@ p {
   border-radius: 5px;
   background-color: rgb(213, 205, 162);
 }
-
-/* Style the plus and minus symbols */
-/* .plus-minus-toggle .symbol {
-  transition: transform 0.3s ease-in-out;
-}
-.plus-minus-toggle .plus {
-  transform: rotate(-90deg);
-} */
 
 .accordion-content p {
   margin: 0;
@@ -332,33 +326,13 @@ input:checked + .slider:before {
 #goal svg {
   position: absolute;
   max-width: 100%;
-  top: -155px;
+  top: -450px;
   left: 0px;
-  overflow: visible;
-}
-
-#goal_svg {
-  z-index: 1;
 }
 
 #goal_content {
   position: relative;
   z-index: 2;
-}
-
-.line {
-  stroke-dasharray: 1 1;
-  stroke-dashoffset: var(--p, 1);
-  /* transition: 0.8s; */
-  transition-timing-function: linear;
-  /* animation: dash 5s linear forwards; */
-  stroke: var(--line-col);
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
 }
 
 #goal > div {
@@ -378,7 +352,7 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   place-content: center;
-  padding: 0 6% 0 9%;
+  padding: 0 10% 0 0%;
   font-size: 120%;
   line-height: 165%;
 }
@@ -398,38 +372,15 @@ input:checked + .slider:before {
   height: auto; /* Maintain the image's aspect ratio */
 }
 
-/* figure {
-  width: 500px;
-  height: 500px;
-  clip-path: polygon(1rem 1rem, 100% 0, 100% calc(100% - 2rem), 0 100%);
-} */
-
 #Ican {
   border-radius: 20px;
-  padding: 6% 10% 5% 10%;
+  padding: 10% 18% 5% 18%;
   font-size: 110%;
   line-height: 165%;
   display: flex;
   flex-direction: column;
   place-content: center;
   position: relative;
-}
-
-#Ican {
-  --circleX: calc(100% * var(--x));
-  --circleY: calc(100% * var(--y));
-  background: radial-gradient(ellipse closest-corner at var(--circleX, 50%) var(--circleY, 50%), var(--cursor-col) 5%, rgba(29, 28, 91, 0) 25%);
-}
-#Ican::before {
-  --cursorX: calc(40vw * var(--x));
-  --cursorY: calc(40vh * var(--y));
-  content: "";
-  position: fixed;
-  background: rgba(31, 30, 96, 1);
-  display: block;
-  translate: var(--cursorX, 0) var(--cursorY, 0);
-  transform: translate(-50%, -50%);
-  mix-blend-mode: luminosity;
 }
 
 #Ican {
@@ -614,14 +565,12 @@ a:active {
   }
 
   #whoamI div {
-    padding: 0 4% 0 5%;
     font-size: 100%;
     line-height: 165%;
   }
 
   #Ican {
     border-radius: 20px;
-    padding: 6% 12% 5% 12%;
     font-size: 100%;
     line-height: 165%;
   }
@@ -636,6 +585,13 @@ a:active {
 
   #kontakt {
     font-size: 100%;
+  }
+}
+
+@media (max-width: 990px) {
+  #goal svg {
+    max-width: 100%;
+    top: -570px;
   }
 }
 
@@ -697,10 +653,6 @@ a:active {
     height: 140px;
   }
 
-  #Ican {
-    padding: 6% 8% 5% 8%;
-  }
-
   #cards {
     flex-direction: column;
     align-items: center;
@@ -740,7 +692,6 @@ a:active {
   }
 
   #whoamI div {
-    padding: 0 4% 0 5%;
     font-size: 80%;
     line-height: 165%;
   }
@@ -770,6 +721,10 @@ a:active {
 }
 
 @media (max-width: 760px) {
+  #whatIwant div {
+    margin-bottom: 25px;
+  }
+
   #kanin {
     width: 28%;
   }
@@ -823,7 +778,7 @@ a:active {
   }
 
   #goal > div {
-    margin: 20% 6% 5% 6%;
+    margin: 0% 6% 5% 6%;
     padding: 6% 6% 5% 6%;
     font-size: 80%;
     line-height: 165%;
@@ -839,6 +794,7 @@ a:active {
     padding: 6% 8% 5% 8%;
     font-size: 80%;
     line-height: 165%;
+    margin-top: 5%;
   }
 
   #Ican img,
@@ -856,6 +812,8 @@ a:active {
   }
   #whoamI div {
     padding-top: 2%;
+    margin-top: 35px;
+    padding-right: 0;
   }
 
   #whoamI_fig {

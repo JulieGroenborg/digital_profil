@@ -87,7 +87,7 @@ gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
   gsap.to("#julie", {
     x: "0%",
     y: 130,
-    scale: 2,
+    scale: 1.7,
     opacity: 0.05,
     // rotation: -90,
     position: "sticky",
@@ -126,42 +126,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /*-----------------animationsleg på mål med praktik-line-X---------------------*/
-
-// var path = document.querySelector(".line");
-// var length = path.getTotalLength();
-
-// Initialize GSAP and ScrollTrigger
-gsap.registerPlugin(ScrollTrigger);
-
-// Create a timeline for drawing the SVG path
-const timeline = gsap.timeline({
-  defaults: { duration: 1 },
-  paused: true,
-});
-
-// Define the animation steps
-// timeline.to(".line", { strokeDashoffset: 0 }, "one"); // Animate stroke-dashoffset to reveal the path
-
-// Create a ScrollTrigger for the animation
-ScrollTrigger.create({
-  trigger: ".line", // Trigger on the element with class ".line"
-  start: "top center", // Start when the trigger element's center reaches the top of the viewport
-  end: "center center", // End when the trigger element's center reaches the bottom of the viewport
-  // markers: true,
-  onUpdate: ({ trigger, progress }) => {
-    trigger.style.setProperty("--p", 1 - progress.toFixed(5));
-  },
-  scrub: 2, // Scrub the animation with a 0.2 second smoothing
-  // animation: timeline, // Use the created timeline for the animation
-});
-
-/*-----------------------cursor-----------------*/
-// const root = document.querySelector("#Ican");
-
-function updateCursor(e) {
-  x = e.clientX / window.innerWidth;
-  y = e.clientY / window.innerHeight;
-  document.documentElement.style.setProperty("--x", x.toFixed(5));
-  document.documentElement.style.setProperty("--y", y.toFixed(5));
-}
-document.body.addEventListener("pointermove", updateCursor);
